@@ -31,34 +31,34 @@
     </properties>
 
     <dependencies>
+        <!-- Compile/runtime dependencies -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>2.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.http-client</groupId>
+			<artifactId>google-http-client</artifactId>
+			<version>1.17.0-rc</version>
+		</dependency>
+
+        <!-- Test Dependencies -->
         <dependency>
             <groupId>com.wixpress.hoopoe</groupId>
             <artifactId>hoopoe-utest</artifactId>
+			<scope>test</scope>
         </dependency>
-
-        <!-- Compile/runtime dependencies -->
-	<dependency>
-		<groupId>com.fasterxml.jackson.core</groupId>
-		<artifactId>jackson-core</artifactId>
-		<version>2.1.1</version>
-	</dependency>
-	<dependency>
-		<groupId>com.fasterxml.jackson.core</groupId>
-		<artifactId>jackson-annotations</artifactId>
-		<version>2.1.1</version>
-	</dependency>
-	<dependency>
-		<groupId>com.fasterxml.jackson.core</groupId>
-		<artifactId>jackson-databind</artifactId>
-		<version>2.1.1</version>
-	</dependency>
-	<dependency>
-		<groupId>com.google.http-client</groupId>
-		<artifactId>google-http-client</artifactId>
-		<version>1.17.0-rc</version>
-	</dependency>
-
-        <!-- Test Dependencies -->
         <dependency>
             <groupId>com.wixpress.common</groupId>
             <artifactId>wix-framework-scala-test-dependencies</artifactId>
