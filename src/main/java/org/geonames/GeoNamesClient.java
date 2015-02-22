@@ -17,19 +17,16 @@ public class GeoNamesClient {
 	private final Integer connectTimeout;
 	private final Integer readTimeout;
     private final Integer numberOfRetries;
-	private final String username;
-	
-	public GeoNamesClient(HttpRequestFactory requestFactory, Integer connectTimeout, Integer readTimeout, Integer numberOfRetries,
-			String username) {
+
+	public GeoNamesClient(HttpRequestFactory requestFactory, Integer connectTimeout, Integer readTimeout, Integer numberOfRetries) {
 		this.requestFactory = requestFactory;
 		this.connectTimeout = connectTimeout;
 		this.readTimeout = readTimeout;
         this.numberOfRetries = numberOfRetries;
-		this.username = username;
 	}
 	
-	public TimezoneResponse getTimezone(double lat, double lng) throws GeoNamesException, IOException {
-		final TimezoneResponse response = getTimezoneImpl(lat, lng);
+	public TimezoneResponse getTimezone(String username, double lat, double lng) throws GeoNamesException, IOException {
+		final TimezoneResponse response = getTimezoneImpl(username, lat, lng);
 		if (response.status != null) {
 			throw new GeoNamesException(response.status);
 		}
@@ -44,7 +41,7 @@ public class GeoNamesClient {
         }
     }
 	
-	private TimezoneResponse getTimezoneImpl(double lat, double lng) throws IOException {
+	private TimezoneResponse getTimezoneImpl(String username, double lat, double lng) throws IOException {
         final String url = GEONAMES_API_URL + "timezoneJSON"
         		+ "?lat=" + encode(Double.toString(lat))
         		+ "&lng=" + encode(Double.toString(lng))
