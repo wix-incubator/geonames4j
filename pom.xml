@@ -33,13 +33,13 @@
     <dependencies>
         <!-- Compile/runtime dependencies -->
         <dependency>
-            <groupId>com.wixpress.openrest</groupId>
+            <groupId>com.wix.restaurants</groupId>
             <artifactId>wix-restaurants-json</artifactId>
         </dependency>
 		<dependency>
 			<groupId>com.google.http-client</groupId>
 			<artifactId>google-http-client</artifactId>
-			<version>1.17.0-rc</version>
+			<version>1.20.0</version>
 		</dependency>
 
         <!-- Test Dependencies -->
